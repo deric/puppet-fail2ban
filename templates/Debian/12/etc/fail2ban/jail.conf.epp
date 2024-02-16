@@ -288,7 +288,7 @@ enabled = <%= 'ssh' in $fail2ban::jails %>
 #mode   = normal
 port    = <%= fail2ban::port('ssh', 'ssh') %>
 logpath = %(sshd_log)s
-backend = %(sshd_backend)s
+backend = systemd
 
 
 [dropbear]
