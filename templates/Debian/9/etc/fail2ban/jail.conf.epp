@@ -240,7 +240,7 @@ backend = %(sshd_backend)s
 # The mail-whois action send a notification e-mail with a whois request
 # in the body.
 enabled = <%= "ssh-ddos" in $fail2ban::jails %>
-port    = <%= lookup('fail2ban::jails_config.ssh-ddos.port', String, undef, 'ssh') %>
+port    = <%= fail2ban::port('ssh-ddos', 'ssh') %>
 logpath = %(sshd_log)s
 backend = %(sshd_backend)s
 
